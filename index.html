@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<title>Total Free Magazine</title>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/type.css" rel="stylesheet" type="text/css">
+<link href="css/buttons.css" rel="stylesheet" type="text/css">
+<link href="css/audioplayer1.css" rel="stylesheet" type="text/css">
+
+<!-- <script src="phonegap.js"></script> -->
+<script type="text/javascript">
+  function onLoad() {
+     document.addEventListener("deviceready", onDeviceReady, false);
+  }
+
+   function onDeviceReady() {
+       document.addEventListener("backbutton", onBackKeyDown, true);
+       document.addEventListener("menubutton", menuKeyDown, true);
+        if (document.getElementById)
+          {  // DOM3 = IE5, NS6 ( Opera Mini...yuuk)
+	     document.getElementById('hidepage').style.visibility = 'hidden';
+          }
+        else {
+		if (document.layers) 
+                   {  
+                     document.hidepage.visibility = 'hidden';
+		   }
+               else {  // IE 4
+			document.all.hidepage.style.visibility = 'hidden';
+		    }
+	     }
+        
+
+     }
+
+  function onBackKeyDown() {
+      //alert("Test");
+      window.location.reload();
+   }
+
+   function menuKeyDown1() {
+      //alert("Questa Applicazione è realizzata da Ingalb Company! Per informazioni www.ingalb.info");
+           
+       navigator.notification.alert(
+            'Questa Applicazione \xE8 realizzata da Ingalb Company! Per informazioni http://www.ingalb.info',  // message
+             onBackKeyDown,
+            'Developer',            // title
+            'OK'                  // buttonName
+        );
+   }
+
+function onConfirm(buttonIndex) {
+      //alert("Test");
+     // window.location.reload();
+    if(buttonIndex==2){ navigator.app.exitApp();}
+    else {navigator.app.backHistory();}
+   }
+
+
+
+function menuKeyDown() {
+        navigator.notification.confirm(
+            'Questa Applicazione \xE8 realizzata da Ingalb Company! Per informazioni http://www.ingalb.info',  // message
+            onConfirm,              // callback to invoke with index of button pressed
+            'Credits',            // title
+            'OK,Chiudi App'          // buttonLabels
+        );
+    }
+
+</script>
+
+
+<script type="text/javascript" src="scripts/jquery17.js"></script>
+<script type="text/javascript" src="scripts/tweetable.jquery.min.js"></script>
+<script type="text/javascript" src="scripts/klass.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</head>
+
+<body onload="onLoad()">
+
+<div class="site">
+<div class="header-decoration"></div>
+
+<div class="element-wrapper">
+     <a href="index.html"><img class="column-icon blue-icon" src="images/home.png" alt="img"></a>
+     <a id="home"><img class="logo" src="images/tfm-logo.png" alt="img"></a>
+      
+      <div class="clear"></div>
+</div>
+
+<div class="home">
+
+    <div class="element-wrapper">
+        <div class="decoration"></div>
+         <ul class="nav-list nav-list2">
+          <li><a id="news" class="tapInEffected tapOutEffected">Ultime notizie<span>+</span></a></li>
+          <li><a id="about" class="tapInEffected tapOutEffected">Chi siamo<span>+</span></a></li>
+        </ul>     
+    </div>
+    <div class="element-wrapper">
+       
+       <h4 class="page-title">Total Free Radio</h4>
+        <div class="audio-player">
+           <h1 id="titulliradio">On Air: </h1>
+           <img class="cover" src="http://d1bm3dmew779uf.cloudfront.net/medium/5c7fc42c55021c4eb807c77a2e3f708b.jpg" alt="">
+           <div class="mejs-container mejs-audio" style="height: 120px;"><div class="mejs-inner"><div class="mejs-mediaelement"><audio id="playera" src="http://api.spreaker.com/listen/user/totalfreeradio/episode/latest/shoutcast" preload="metadata"></audio></div>
+           <div class="mejs-controls"><div class="mejs-button mejs-playpause-button mejs-play"><button title="Play"  onclick="document.getElementById('playera').play()" type="button"></button></div>
+           <div class="mejs-button mejs-playpause-button mejs-pause"><button title="Pause" onclick="document.getElementById('playera').pause()" type="button"></button></div>
+           </div></div></div></div>
+          
+                  
+      <div class="decoration"></div> 
+     </div>
+
+</div>
+
+
+<div class="about">
+	<div class="element-wrapper">
+    	<div class="decoration"></div>
+        <h4 class="page-title">Chi Siamo</h4>
+        <img class="full-screen-image" src="images/slider/tfm.jpg" alt="img">
+        <p class="full-width shadow">
+        	Total Free Magazine &eacute; il primo web magazine in Italia a produrre e pubblicare i
+propri articoli solo su Facebook.<br>
+Nasce con l'intento di offrire contenuti originali in esclusiva per i soli
+utenti di Facebook.<br>
+TFM fornisce un'informazione diversa rispetto agli altri media. Si tratta
+dell' INFORMAZIONE SOCIAL fatta ed elaborata pensando al fruitore del social
+network. Per questo pu&oacute; definirsi un SOCIAL MEDIA.
+Quindi ci piace sottolineare che non facciamo informazione SU Facebook ma
+PER Facebook.<br>
+Un magazine ricco di contenuti multimediali e completamente interattivo con la
+possibilit&aacute; di comunicare con gli autori degli articoli.
+        </p>
+        <div class="decoration"></div>
+    </div>
+</div>
+
+<div class="news">
+	<div class="element-wrapper">
+    	<div class="decoration"></div>
+        <h4 class="page-title">Ultimi post da facebook</h4>
+        <div id="lajme"><p id="lajme-hide" class="center-text"><img src="images/background/130.gif" alt="load"></p></div>
+     </div>        
+</div>
+
+<div class="footer-decoration">
+   	<p>Le ultime da twitter</p>
+</div>
+
+<div class="footer-wrapper">
+	<div class="element-wrapper">
+    	<div id="tweets"></div>
+    </div>
+</div>
+<div class="copyright-decoration"></div>
+<div class="social-menu">
+    	         <a href="http://www.facebook.com/totalfreemagazine/"><img src="images/social-icons/facebook.png" alt="img"></a>
+                 <a href="http://www.twitter.com/TotFreeMagazine"><img src="images/social-icons/twitter.png" alt="img"></a>
+	             <a href="http://www.youtube.com/totalfreemagazine"><img src="images/social-icons/youtube.png" alt="img"></a>
+                 <a href="http://plus.google.com/113325481959307740016#113325481959307740016/posts"><img src="images/social-icons/gplus.png" alt="img"></a>
+                 <a href="mailto:totalfreemagazine@libero.it"><img src="images/social-icons/mail.png" alt="img"></a>
+</div>
+<div class="copyright-wrapper">
+    <div class="element-wrapper">
+       <p class="copyright-left">Copyright Total Free Magazine. Developer from Ingalb Company</p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+</div>
+
+</body>
+</html>
